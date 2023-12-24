@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://droapngfa3hcn"]
+
+[ext_resource type="PackedScene" uid="uid://bwlf58p8jwb4p" path="res://Examples/Damage Control/Combined.tscn" id="1_2hx6a"]
+[ext_resource type="PackedScene" uid="uid://yajwbf17pqys" path="res://Examples/Damage Control/Emitter.tscn" id="2_vgo4y"]
+[ext_resource type="PackedScene" uid="uid://c4ifprl6xpx07" path="res://Examples/Damage Control/Receiver.tscn" id="3_fnk1g"]
+
+[node name="PlayableScene" type="Node2D"]
+
+[node name="Combined" parent="." instance=ExtResource("1_2hx6a")]
+position = Vector2(960, 804)
+
+[node name="Emitter" parent="." instance=ExtResource("2_vgo4y")]
+position = Vector2(304, 470)
+
+[node name="Receiver" parent="." instance=ExtResource("3_fnk1g")]
+position = Vector2(1544, 466)

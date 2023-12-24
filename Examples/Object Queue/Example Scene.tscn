@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://1ix3c35m5agc"]
+
+[ext_resource type="Script" path="res://Examples/Object Queue/scene.gd" id="1_jnwaa"]
+
+[node name="ExampleScene" type="Node2D"]
+script = ExtResource("1_jnwaa")
+
+[node name="VSlider" type="VSlider" parent="."]
+custom_minimum_size = Vector2(0, 200)
+offset_left = 1465.0
+offset_top = 350.0
+offset_right = 1481.0
+offset_bottom = 550.0
+min_value = 0.5
+max_value = 8.0
+value = 0.5

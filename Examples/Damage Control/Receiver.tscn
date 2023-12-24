@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4ifprl6xpx07"]
+
+[ext_resource type="Script" path="res://Examples/Damage Control/receiver.gd" id="1_fwhvc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qy7q"]
+size = Vector2(128, 128)
+
+[node name="Receiver" type="Area2D"]
+script = ExtResource("1_fwhvc")
+_controller_type = 1
+_health = 40.0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0, 1, 0, 1)
+polygon = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_5qy7q")

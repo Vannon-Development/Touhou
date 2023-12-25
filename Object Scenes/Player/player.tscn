@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://dew3dwxwuavou"]
+
+[ext_resource type="Script" path="res://Object Scenes/Player/player.gd" id="1_fmqr5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vuau7"]
+albedo_color = Color(0, 0.415686, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m75qb"]
+material = SubResource("StandardMaterial3D_vuau7")
+size = Vector3(32, 64, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yv024"]
+size = Vector2(32, 64)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_fmqr5")
+_speed = 200.0
+_controller_type = 1
+_health = 50.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("BoxMesh_m75qb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yv024")

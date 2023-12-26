@@ -1,4 +1,4 @@
-class_name DamageController extends Node
+class_name DamageController extends Node2D
 
 enum ControllerType { emitter, receiver, combined }
 

@@ -14,3 +14,4 @@ func _physics_process(delta: float):
 func death_sequence():
 	print("Player is Dead!")
 	_this.queue_free()
+

@@ -1,9 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://dew3dwxwuavou"]
+[gd_scene load_steps=16 format=3 uid="uid://dew3dwxwuavou"]
 
 [ext_resource type="Script" path="res://Object Scenes/Player/player.gd" id="1_fmqr5"]
 [ext_resource type="PackedScene" uid="uid://diwvk5sjmjo5t" path="res://Object Scenes/Player/Firing/pattern_node.tscn" id="2_iumt2"]
 [ext_resource type="PackedScene" uid="uid://e8doohejaoyo" path="res://Object Scenes/Player/Firing/player_laser.tscn" id="3_gj1wx"]
 [ext_resource type="Script" path="res://Object Scenes/Player/Firing/tri_laser_pattern.gd" id="4_q63yb"]
+[ext_resource type="PackedScene" uid="uid://0lvi2fjwi1u2" path="res://Object Scenes/Player/Firing/player_round_shot.tscn" id="5_jm4eq"]
+[ext_resource type="Script" path="res://Object Scenes/Player/Firing/short_spread_pattern.gd" id="5_ny4xp"]
+[ext_resource type="Script" path="res://Object Scenes/Player/Firing/pattern_node.gd" id="7_tticp"]
+[ext_resource type="PackedScene" uid="uid://dbo2fxu4nopnr" path="res://Object Scenes/Player/Firing/player_large_shot.tscn" id="8_76jy0"]
+[ext_resource type="Script" path="res://Object Scenes/Player/Firing/wave_pattern.gd" id="9_db4tq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vuau7"]
 albedo_color = Color(0, 0.415686, 1, 1)
@@ -22,6 +27,20 @@ _speed = 800.0
 _range = 1200.0
 shot_time = 0.1
 
+[sub_resource type="Resource" id="Resource_on8vo"]
+script = ExtResource("5_ny4xp")
+_shot_node = ExtResource("5_jm4eq")
+_speed = 400.0
+_range = 300.0
+shot_time = 0.02
+
+[sub_resource type="Resource" id="Resource_ucdhu"]
+script = ExtResource("9_db4tq")
+_shot_node = ExtResource("8_76jy0")
+_speed = 600.0
+_range = 1400.0
+shot_time = 0.5
+
 [node name="Player" type="Area2D"]
 script = ExtResource("1_fmqr5")
 
@@ -31,5 +50,11 @@ mesh = SubResource("BoxMesh_m75qb")
 [node name="Body Collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_yv024")
 
-[node name="Pattern Node" parent="." instance=ExtResource("2_iumt2")]
-_patterns = Array[Resource("res://Object Scenes/Player/Firing/shot_pattern.gd")]([SubResource("Resource_n2l5b")])
+[node name="Front Patterns" parent="." instance=ExtResource("2_iumt2")]
+position = Vector2(0, -24)
+_patterns = Array[Resource("res://Object Scenes/Player/Firing/shot_pattern.gd")]([SubResource("Resource_n2l5b"), SubResource("Resource_on8vo")])
+
+[node name="Right Patterns" type="Node2D" parent="."]
+position = Vector2(26, -35)
+script = ExtResource("7_tticp")
+_patterns = Array[Resource("res://Object Scenes/Player/Firing/shot_pattern.gd")]([SubResource("Resource_ucdhu")])

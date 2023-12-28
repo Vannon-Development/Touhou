@@ -10,4 +10,6 @@ func create() -> Node2D:
 	return _queue.pop_front()
 
 func finish(obj: Node2D):
+	for item in _queue:
+		if obj == item: return
 	_queue.append(obj)

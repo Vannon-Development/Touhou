@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://diwvk5sjmjo5t"]
+
+[ext_resource type="Script" path="res://Object Scenes/Player/Firing/pattern_node.gd" id="1_p6jjd"]
+
+[node name="Pattern Node" type="Node2D"]
+script = ExtResource("1_p6jjd")

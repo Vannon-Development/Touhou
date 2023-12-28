@@ -6,3 +6,5 @@
 
 [node name="Enemy" parent="." instance=ExtResource("1_36qwx")]
 position = Vector2(842, 528)
+
+[node name="BulletHolder" type="Node2D" parent="Enemy"]

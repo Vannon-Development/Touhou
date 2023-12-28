@@ -1,31 +1,45 @@
 [gd_scene load_steps=5 format=3 uid="uid://3jebaeblon8y"]
 
-[ext_resource type="Script" path="res://Object Scenes/Bullet/Bullet.gd" id="1_pttuy"]
 [ext_resource type="Texture2D" uid="uid://c8yjgcmctwuj3" path="res://icon.svg" id="2_oucs6"]
+
+[sub_resource type="GDScript" id="GDScript_xker1"]
+resource_local_to_scene = true
+resource_name = "Bullet"
+script/source = "extends Node2D
+
+var speed = 400
+
+func _process(delta):
+	position += transform.x * speed * delta
+
+func _on_timer_timeout():
+	queue_free()
+"
 
 [sub_resource type="QuadMesh" id="QuadMesh_7q2t5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n32t6"]
-size = Vector2(14, 14)
+size = Vector2(8.8, 9)
 
 [node name="Bullet" type="Node2D"]
-script = ExtResource("1_pttuy")
+script = SubResource("GDScript_xker1")
 
 [node name="BulletModel" type="Area2D" parent="."]
 
 [node name="BulletVisual" type="MeshInstance2D" parent="BulletModel"]
 position = Vector2(4.76837e-07, -4.76837e-07)
 rotation = -3.14091
-scale = Vector2(70, 70)
+scale = Vector2(45, 45)
 mesh = SubResource("QuadMesh_7q2t5")
 texture = ExtResource("2_oucs6")
 
 [node name="BulletHitbox" type="CollisionShape2D" parent="BulletModel"]
+position = Vector2(0, -0.500001)
 scale = Vector2(5, 5)
 shape = SubResource("RectangleShape2D_n32t6")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

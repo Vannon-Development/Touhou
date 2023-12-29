@@ -7,7 +7,7 @@ size = Vector2(6, 60)
 
 [node name="Player Laser" type="Area2D"]
 script = ExtResource("1_kc6a0")
-_damage = 1.0
+_damage = 2.0
 
 [node name="Visual" type="Polygon2D" parent="."]
 position = Vector2(0, -30)

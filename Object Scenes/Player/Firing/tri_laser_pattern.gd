@@ -1,10 +1,12 @@
 class_name TriLaserPattern extends PlayerShotPattern
 
+@export var _angle: float
+
 func fire_shots(init_time: float, pos: Vector2):
 	super.fire_shots(init_time, pos)
 	_setup_shot(init_time, pos, 0)
-	_setup_shot(init_time, pos, 3)
-	_setup_shot(init_time, pos, -3)
+	_setup_shot(init_time, pos, _angle)
+	_setup_shot(init_time, pos, -_angle)
 
 func _calc_pos(shot: PlayerShot):
 	super._calc_pos(shot)

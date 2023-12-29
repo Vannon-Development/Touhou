@@ -22,6 +22,7 @@ size = Vector2(32, 64)
 
 [sub_resource type="Resource" id="Resource_n2l5b"]
 script = ExtResource("4_q63yb")
+_angle = 3.0
 shot_time = 0.1
 _shot_node = ExtResource("3_gj1wx")
 _speed = 800.0
@@ -29,6 +30,8 @@ _range = 1200.0
 
 [sub_resource type="Resource" id="Resource_on8vo"]
 script = ExtResource("5_ny4xp")
+_angle = 60.0
+_min_scale = 0.3
 shot_time = 0.02
 _shot_node = ExtResource("5_jm4eq")
 _speed = 400.0
@@ -36,6 +39,9 @@ _range = 300.0
 
 [sub_resource type="Resource" id="Resource_ucdhu"]
 script = ExtResource("9_db4tq")
+_angle = 20.0
+_full_width = 80.0
+_frequency = 0.4
 shot_time = 0.5
 _shot_node = ExtResource("8_76jy0")
 _speed = 600.0

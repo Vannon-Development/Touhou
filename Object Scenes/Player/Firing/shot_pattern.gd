@@ -33,6 +33,7 @@ func _remove_shot(shot: PlayerShot):
 	if shot.get_parent() == null: return
 	_shot_parent.remove_child(shot)
 	_shot_queue.finish(shot)
+	shot.shot_hit.disconnect(_shot_collided)
 
 func update_shots(delta: float):
 	for shot in _current_shots:
@@ -54,8 +55,12 @@ func _setup_shot(init_time: float, pos: Vector2, angle: float):
 	shot.visible = false
 	_shot_parent.add_child(shot)
 	_register_shot(shot)
+	shot.shot_hit.connect(_shot_collided)
 
 func _register_shot(shot: PlayerShot):
 	for item in _current_shots:
 		if item == shot: return
 	_current_shots.append(shot)
+
+func _shot_collided(shot: PlayerShot):
+	_remove_shot.call_deferred(shot)

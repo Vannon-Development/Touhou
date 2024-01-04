@@ -2,14 +2,13 @@
 
 [ext_resource type="Script" path="res://Composed Scenes/test_scene.gd" id="1_c5jur"]
 [ext_resource type="PackedScene" uid="uid://dew3dwxwuavou" path="res://Object Scenes/Player/player.tscn" id="1_jstsj"]
-[ext_resource type="PackedScene" uid="uid://dd1erlc0xwjpo" path="res://Object Scenes/Enemy/Enemy.tscn" id="2_jut4u"]
+[ext_resource type="PackedScene" uid="uid://ddd3smqj5j56g" path="res://Object Scenes/Enemies/vertical_enemy.tscn" id="3_lqxit"]
 
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_c5jur")
 
 [node name="Player" parent="." instance=ExtResource("1_jstsj")]
 position = Vector2(938, 890)
-_speed = 450.0
 
-[node name="Enemy" parent="." instance=ExtResource("2_jut4u")]
-position = Vector2(188, 192)
+[node name="Vertical Enemy" parent="." instance=ExtResource("3_lqxit")]
+position = Vector2(812, -126)

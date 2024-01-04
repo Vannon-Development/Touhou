@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddd3smqj5j56g"]
+
+[ext_resource type="Script" path="res://Object Scenes/Enemies/vertical_enemy.gd" id="1_j00e4"]
+
+[node name="Vertical Enemy" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_j00e4")
+_speed = 300.0
+_controller_type = 2
+_damage = 20.0
+_health = 80.0
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(40, 0, -40, -25, -40, 25)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+polygon = PackedVector2Array(40, 0, -40, -25, -40, 25)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_left_screen"]

@@ -49,6 +49,9 @@ _range = 1400.0
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_fmqr5")
+_speed = 450.0
+_controller_type = 1
+_health = 100.0
 
 [node name="Visual" type="MeshInstance2D" parent="."]
 mesh = SubResource("BoxMesh_m75qb")

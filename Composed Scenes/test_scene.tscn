@@ -9,8 +9,6 @@ script = ExtResource("1_c5jur")
 
 [node name="Player" parent="." instance=ExtResource("1_jstsj")]
 position = Vector2(938, 890)
-_speed = 450.0
 
 [node name="Vertical Enemy" parent="." instance=ExtResource("3_lqxit")]
 position = Vector2(812, -126)
-rotation = 1.5708
